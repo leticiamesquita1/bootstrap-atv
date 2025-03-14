@@ -1,0 +1,30 @@
+.imagem{
+    display: flex;
+    justify-content:center;
+    gap: 30px;
+}
+img{
+    margin-top: 30px;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+}
+.carrinho{
+    padding-top: 15px;
+    display: flex;
+    justify-content:center;
+    gap: 215px;
+   
+}
+.bot{
+    background-color: #e3f2fd;
+    border: none;
+    border-radius: 12px;
+    color: rgb(61, 61, 61);
+    padding: 12px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.bot:hover{
+    color: rgb(22, 22, 22);
+    background-color: #d0ebff;
+}
