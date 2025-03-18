@@ -16,8 +16,26 @@ img{
     gap: 215px;
    
 }
+
+
 .bot{
     background-color: #e3f2fd;
+    border: none;
+    border-radius: 12px;
+    color: rgb(61, 61, 61);
+    padding: 12px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.bot2{
+    background-color: #fde3f3;
+    border: none;
+    border-radius: 12px;
+    color: rgb(61, 61, 61);
+    padding: 12px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.bot3{
+    background-color: #fdfde3;
     border: none;
     border-radius: 12px;
     color: rgb(61, 61, 61);

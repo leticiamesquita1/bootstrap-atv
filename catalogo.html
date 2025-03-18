@@ -111,14 +111,34 @@
     </div>
     
     <div class="imagem">
-        <img src="img1.jpg" alt="1" class="add-to-cart" data-img="img1.jpg">
-        <img src="img2.jpg" alt="2" class="add-to-cart" data-img="img2.jpg">
-        <img src="img3.jpg" alt="3" class="add-to-cart" data-img="img3.jpg">
+        <img src="img1.jpg" alt="1" class="add-to-cart" data-img="Tulipa Azul">
+        <img src="img2.jpg" alt="2" class="add-to-cart" data-img="Lírio Azul Escuro ">
+        <img src="img3.jpg" alt="3" class="add-to-cart" data-img="Lírio Azul Claro">
     </div>
     <div class="carrinho">
         <button class="bot">Adicionar ao carrinho</button>
         <button class="bot">Adicionar ao carrinho</button>
         <button class="bot">Adicionar ao carrinho</button>
+    </div>
+    <div class="imagem">
+        <img src="Rosa1.jpg" alt="1" class="add-to-cart" data-img="Lírio Rosa e Branco ">
+        <img src="Rosa2.jpg" alt="2" class="add-to-cart" data-img="Rosa Branca e Rosa">
+        <img src="Rosa3.jpg" alt="3" class="add-to-cart" data-img="Tulipa Rosa">
+    </div>
+    <div class="carrinho">
+        <button class="bot2">Adicionar ao carrinho</button>
+        <button class="bot2">Adicionar ao carrinho</button>
+        <button class="bot2">Adicionar ao carrinho</button>
+    </div>
+    <div class="imagem">
+        <img src="Yellow1.jpg" alt="1" class="add-to-cart" data-img="Tulipa Amarela">
+        <img src="Yellow2.jpg" alt="2" class="add-to-cart" data-img="Margarida Branca e Rosa Amarela ">
+        <img src="Yellow3.jpg" alt="3" class="add-to-cart" data-img="Lírio Amarelo">
+    </div>
+    <div class="carrinho">
+        <button class="bot3">Adicionar ao carrinho</button>
+        <button class="bot3">Adicionar ao carrinho</button>
+        <button class="bot3">Adicionar ao carrinho</button>
     </div>
 
     <!-- Aba do Carrinho -->
@@ -130,45 +150,6 @@
         <button id="closeCartBtn" class="btn btn-danger">Fechar Carrinho</button>
     </div>
 
-    <script>
-        let cart = [];
-        const cartButton = document.getElementById('cartButton');
-        const cartItems = document.getElementById('cartItems');
-        const cartList = document.getElementById('cartList');
-        const closeCartBtn = document.getElementById('closeCartBtn');
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-
-        // Função para adicionar itens ao carrinho
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const imgSrc = this.getAttribute('data-img');
-                if (!cart.includes(imgSrc)) {
-                    cart.push(imgSrc);
-                    updateCart();
-                }
-            });
-        });
-
-        // Atualizar a lista de itens no carrinho
-        function updateCart() {
-            cartList.innerHTML = '';
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.classList.add('cart-item');
-                li.innerHTML = `<img src="${item}" alt="item"> <p>${item}</p>`;
-                cartList.appendChild(li);
-            });
-        }
-
-        // Abrir a aba do carrinho
-        cartButton.addEventListener('click', function() {
-            cartItems.style.display = 'block';
-        });
-
-        // Fechar a aba do carrinho
-        closeCartBtn.addEventListener('click', function() {
-            cartItems.style.display = 'none';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
