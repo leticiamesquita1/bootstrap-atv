@@ -1,6 +1,7 @@
 body{
     font-family: 'Courier New', Courier, monospace;
 }
+
 .imagem{
     display: flex;
     justify-content:center;
@@ -54,6 +55,31 @@ img{
 .bot3:hover{
     color: rgb(22, 22, 22);
     background-color: #ffffc9;
+}
+
+.bot4{
+    background-color: #ece3fd;
+    border: none;
+    border-radius: 12px;
+    color: rgb(61, 61, 61);
+    padding: 12px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.bot4:hover{
+    color: rgb(22, 22, 22);
+    background-color: #ddcaff;
+}
+.bot5{
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 12px;
+    color: rgb(61, 61, 61);
+    padding: 12px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.bot5:hover{
+    color: rgb(22, 22, 22);
+    background-color: #e9e9e9;
 }
 
 
