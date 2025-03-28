@@ -12,8 +12,27 @@
         }
 
         function testar() {
-           window.location.href='catalogo.html';
+           window.location.href='catalogo.html'; // Redireciona para a página de cadastro
         }
+
+        function loadLogradouro(){
+            var cep = document.getElementById('cep').value
+                if(cep.length === 8){ //LENGTH 
+            fetch(`http://viacep.com.br/ws/${cep}/json/`)
+            .then(response => response.json())
+            .then(data => {
+                if(!data.erro){
+                document.getElementById('logradouro').value = data.logradouro
+                document.getElementById('bairro').value = data.bairro
+                document.getElementById('cidade').value = data.localidade
+                document.getElementById('estado').value = data.uf
+    
+        }
+    })
+    .catch(error => console.error('Erro ao buscar CEP',error))
+    }
+    }
+    
     </script>
 </head>
 <body>
@@ -48,12 +67,20 @@
                 <input type="text" class="form-control" id="inputPassword4">
             </div>
             <div class="col-12">
+                <label for="inputCep" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="cep" onblur="loadLogradouro()" placeholder="00000-000">
+            </div>
+            <div class="col-12">
                 <label for="inputAddress" class="form-label">Endereço</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Rua 123">
+                <input type="text" class="form-control" id="logradouro" placeholder="Rua 123">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Bairro</label>
+                <input type="text" class="form-control" id="bairro" placeholder="Rua 123">
             </div>
             <div class="col-md-6">
                 <label for="inputCity" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="inputCity" placeholder="Procurar..." list="cidades">
+                <input type="text" class="form-control" id="cidade" placeholder="Procurar..." list="cidades">
                 <datalist id="cidades">
                     <option value="Rio Branco">
                     <option value="Maceió">
@@ -86,7 +113,7 @@
               </div>
               <div class="col-md-4">
                   <label for="inputState" class="form-label">Estado</label>
-                  <select id="inputState" class="form-select">
+                  <select id="estado" class="form-select">
                       <option selected>Selecione...</option>
                       <option value="AC">Acre</option>
                       <option value="AL">Alagoas</option>

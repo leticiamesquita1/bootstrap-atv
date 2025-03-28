@@ -1,0 +1,86 @@
+
+font-family:'Courier New', Courier, monospace;
+max-width: 400px;
+margin: auto;
+margin-top: 60px;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+label{
+display: block;
+margin-top:10px
+}
+input {
+width: 100%;
+padding: 5px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 10px;
+}
+button {
+width: 80%;
+padding: 10px;
+margin-top: 20px;
+margin-left: 40px;
+background-color: #dddbff;
+color: rgb(161, 161, 161);
+border: none;
+border-radius: 15px;
+cursor: pointer;
+}
+button:hover {
+background-color: #c4c1ff;
+
+}
+</style>
+</head>
+<body>
+<form id="cadastroForm">
+<h2>Cadastro</h2>
+<label>Nome</label>
+<input type="text" id="nome" required> <!-- O REQUIRED É OBRIGATORIO ANTES DE ENTREGAR O FORM-->
+<label>Email</label>
+<input type="email" id="email"required>
+<label>Telefone</label>
+<input type="tel" id="fone"required>
+
+<label>CEP</label>
+<input type="text" id="cep" onblur="loadLogradouro()" required >
+<label>Logradouro</label>
+<input type="text" id="logradouro"required>
+<label>Bairro</label>
+<input type="text" id="bairro"required>
+<label>Cidade</label>
+<input type="text" id="cidade"required>
+<label>Estado</label>
+<input type="text" id="estado"required>
+<button type="submit">Salvar</button>
+</form>
+
+<script>
+
+function loadLogradouro(){
+var cep = document.getElementById('cep').value
+if(cep.length === 8){ //LENGTH 
+fetch(`http://viacep.com.br/ws/${cep}/json/`)
+.then(response => response.json())
+.then(data => {
+    if(!data.erro){
+        document.getElementById('logradouro').value = data.logradouro
+        document.getElementById('bairro').value = data.bairro
+        document.getElementById('cidade').value = data.localidade
+        document.getElementById('estado').value = data.uf
+
+    }
+})
+.catch(error => console.error('Erro ao buscar CEP',error))
+}
+}
+
+
+</script>
+</body>
+</html>
