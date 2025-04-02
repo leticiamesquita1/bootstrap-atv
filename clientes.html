@@ -64,6 +64,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Sobrenome</th>
+                    <th>Email</th>
                     <th>CEP</th>
                     <th>Endereço</th>
                     <th>Bairro</th>
@@ -88,6 +89,7 @@
                 tr.innerHTML = `
                     <td><input type="text" value="${cliente.nome}" id="nome-${cliente.id}" class="form-control"></td>
                     <td><input type="text" value="${cliente.sobrenome}" id="sobrenome-${cliente.id}" class="form-control"></td>
+                    <td><input type="text" value="${cliente.email}" id="email-${cliente.id}" class="form-control"></td>
                     <td>${cliente.cep}</td>
                     <td><input type="text" value="${cliente.endereco}" id="endereco-${cliente.id}" class="form-control"></td>
                     <td><input type="text" value="${cliente.bairro}" id="bairro-${cliente.id}" class="form-control"></td>
@@ -109,6 +111,7 @@
             if (cliente) {
                 cliente.nome = document.getElementById(`nome-${id}`).value;
                 cliente.sobrenome = document.getElementById(`sobrenome-${id}`).value;
+                cliente.email = document.getElementById(`email-${id}`).value;
                 cliente.endereco = document.getElementById(`endereco-${id}`).value;
                 cliente.bairro = document.getElementById(`bairro-${id}`).value;
                 cliente.cidade = document.getElementById(`cidade-${id}`).value;
